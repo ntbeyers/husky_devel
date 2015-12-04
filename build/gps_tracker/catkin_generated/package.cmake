@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "gps_tracker")
+set(gps_tracker_MAINTAINER "husky <husky@todo.todo>")
+set(gps_tracker_DEPRECATED "")
+set(gps_tracker_VERSION "0.0.0")
+set(gps_tracker_BUILD_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "rospy" "std_msgs")
+set(gps_tracker_RUN_DEPENDS "geometry_msgs" "nav_msgs" "roscpp" "rospy" "std_msgs")
+set(gps_tracker_BUILDTOOL_DEPENDS "catkin")

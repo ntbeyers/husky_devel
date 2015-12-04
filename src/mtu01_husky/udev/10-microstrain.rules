@@ -1,0 +1,2 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="199b", ATTRS{idProduct}=="3065", SYMLINK="microstrain", MODE="0666"
+SUBSYSTEM=="tty", ATTRS{idVendor}=="199b", ATTRS{idProduct}=="3d65", SYMLINK="microstrain", MODE="0666"

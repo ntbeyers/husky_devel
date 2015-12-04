@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="lms1xx_2">
+	<joint name="topPlate_to_lms1xx_2" type="fixed">
+		<parent link="topPlate"/>
+		<child link="lms1xx_2"/>
+		<origin xyz="0.29 0.0 0.04" rpy="3.14159265359 0.0 0.0"/>
+	</joint>
+
+	<link name="lms1xx_2">
+		<visual>
+			<geometry>
+				<mesh filename="package://mtu01_husky/meshes/lms1xx.STL"/>
+			</geometry>
+			<material name="velodyneGray">
+				<color rgba="0.81 0.81 0.81 1"/>
+			</material>
+		</visual>
+	</link>
+</robot>

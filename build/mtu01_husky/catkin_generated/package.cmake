@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "mtu01_husky")
+set(mtu01_husky_MAINTAINER "Clearpath Team <code@clearpathrobotics.com>")
+set(mtu01_husky_DEPRECATED "")
+set(mtu01_husky_VERSION "0.0.0")
+set(mtu01_husky_BUILD_DEPENDS )
+set(mtu01_husky_RUN_DEPENDS "husky_bringup" "husky_description")
+set(mtu01_husky_BUILDTOOL_DEPENDS "catkin")

@@ -1,0 +1,2 @@
+gps_tracker:mtu01_husky
+-DCATKIN_DEVEL_PREFIX=/home/husky/husky_devel/devel -DCMAKE_INSTALL_PREFIX=/home/husky/husky_devel/install

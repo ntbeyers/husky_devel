@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<robot name="topPlate">
+	<joint name="base_link_to_topPlate" type="fixed">
+		<parent link="base_link"/>
+		<child link="topPlate"/>
+		<origin xyz="0.0 0.0 0.2503" rpy="0.0 0.0 0.0"/>
+	</joint>
+
+	<link name="topPlate">
+		<visual>
+			<geometry>
+				<mesh filename="package://mtu01_husky/meshes/doublePlate.STL"/>
+			</geometry>
+			<material name="black">
+				<color rgba="0.6 0.6 0.6 1"/>
+			</material>
+		</visual>
+	</link>
+</robot>

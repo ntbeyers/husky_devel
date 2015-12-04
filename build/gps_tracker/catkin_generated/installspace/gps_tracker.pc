@@ -1,0 +1,8 @@
+prefix=/home/husky/husky_devel/install
+
+Name: gps_tracker
+Description: Description of gps_tracker
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/husky/husky_devel/install/lib 
+Requires: 
