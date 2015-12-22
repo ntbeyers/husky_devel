@@ -1,2 +1,2 @@
-gps_tracker:mtu01_husky
--DCATKIN_DEVEL_PREFIX=/home/husky/husky_devel/devel -DCMAKE_INSTALL_PREFIX=/home/husky/husky_devel/install
+basic_sensors:gps_navigation:gps_tracker:mtu01_husky
+-DCATKIN_DEVEL_PREFIX=/home/naslab/husky_devel/devel -DCMAKE_INSTALL_PREFIX=/home/naslab/husky_devel/install -G Unix Makefiles

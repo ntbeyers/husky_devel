@@ -1,0 +1,8 @@
+prefix=/home/naslab/husky_devel/devel
+
+Name: rospy
+Description: Description of rospy
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/naslab/husky_devel/devel/lib 
+Requires: 

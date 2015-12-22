@@ -1,8 +1,8 @@
-# Install script for directory: /home/husky/husky_devel/src/mtu01_husky
+# Install script for directory: /home/naslab/husky_devel/src/mtu01_husky
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/husky/husky_devel/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/naslab/husky_devel/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/husky/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_husky.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/naslab/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_husky.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtu01_husky/cmake" TYPE FILE FILES
-    "/home/husky/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_huskyConfig.cmake"
-    "/home/husky/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_huskyConfig-version.cmake"
+    "/home/naslab/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_huskyConfig.cmake"
+    "/home/naslab/husky_devel/build/mtu01_husky/catkin_generated/installspace/mtu01_huskyConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtu01_husky" TYPE FILE FILES "/home/husky/husky_devel/src/mtu01_husky/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/mtu01_husky" TYPE FILE FILES "/home/naslab/husky_devel/src/mtu01_husky/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 

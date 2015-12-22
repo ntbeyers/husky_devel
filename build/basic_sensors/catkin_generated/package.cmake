@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "basic_sensors")
+set(basic_sensors_MAINTAINER "naslab <naslab@todo.todo>")
+set(basic_sensors_DEPRECATED "")
+set(basic_sensors_VERSION "0.0.0")
+set(basic_sensors_BUILD_DEPENDS "roscpp" "rospy")
+set(basic_sensors_RUN_DEPENDS "roscpp" "rospy")
+set(basic_sensors_BUILDTOOL_DEPENDS "catkin")

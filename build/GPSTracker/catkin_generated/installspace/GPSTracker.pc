@@ -1,8 +1,0 @@
-prefix=/home/husky/husky_devel/install
-
-Name: GPSTracker
-Description: Description of GPSTracker
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/husky/husky_devel/install/lib 
-Requires: 

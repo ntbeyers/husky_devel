@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "gps_navigation")
+set(gps_navigation_MAINTAINER "naslab <naslab@todo.todo>")
+set(gps_navigation_DEPRECATED "")
+set(gps_navigation_VERSION "0.0.0")
+set(gps_navigation_BUILD_DEPENDS "roscpp" "rospy")
+set(gps_navigation_RUN_DEPENDS "roscpp" "rospy")
+set(gps_navigation_BUILDTOOL_DEPENDS "catkin")

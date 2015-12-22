@@ -1,8 +1,8 @@
-# Install script for directory: /home/husky/husky_devel/src/gps_tracker
+# Install script for directory: /home/naslab/husky_devel/src/gps_tracker
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  SET(CMAKE_INSTALL_PREFIX "/home/husky/husky_devel/install")
+  SET(CMAKE_INSTALL_PREFIX "/home/naslab/husky_devel/install")
 ENDIF(NOT DEFINED CMAKE_INSTALL_PREFIX)
 STRING(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ IF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 ENDIF(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/husky/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_tracker.pc")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/naslab/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_tracker.pc")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps_tracker/cmake" TYPE FILE FILES
-    "/home/husky/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_trackerConfig.cmake"
-    "/home/husky/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_trackerConfig-version.cmake"
+    "/home/naslab/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_trackerConfig.cmake"
+    "/home/naslab/husky_devel/build/gps_tracker/catkin_generated/installspace/gps_trackerConfig-version.cmake"
     )
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
 IF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps_tracker" TYPE FILE FILES "/home/husky/husky_devel/src/gps_tracker/package.xml")
+  FILE(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gps_tracker" TYPE FILE FILES "/home/naslab/husky_devel/src/gps_tracker/package.xml")
 ENDIF(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
 
