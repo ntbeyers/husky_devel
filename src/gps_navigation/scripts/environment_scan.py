@@ -5,7 +5,7 @@
 
 import rospy
 from numpy import arctan2, sqrt, arange, pi, sin, cos, save
-from sys import path, exit
+from sys import path, exit, argv
 path.append('/modules/')
 from gpsLocalization import gpsLocalization
 from sensor_msgs.msg import LaserScan
@@ -39,13 +39,12 @@ class Navigation(object):
 
         #set parameters
         self.gap = .7 #space needed to pass through
-        self.target_x = 5 #destination coordinates
-        self.target_y = 4
         self.agent_id = 0
+        self.topicConfig()
 
-        self.connection = gpsLocalization()   #Connection which will give current position
+        self.connection = gpsLocalization(argv[3],self.gpsTopic,self.imuTopic)   #Connection which will give current position
         self.path_planner = GapFinder(self.gap)  #Finds gaps that the robot can enter
-        self.actuation = ROS2DimActuate()   #Controls the motion of the robot
+        self.actuation = ROS2DimActuate(self.controlTopic)   #Controls the motion of the robot
         self.actuation.setAngularVelocityLimit(.5)  #Sets the maximum velocity
         #Create a tracker which knows how to move the robot and get it's position
         self.tracker = PlanarTracker(self.actuation.actuate, self.connection.getStates)
@@ -59,14 +58,33 @@ class Navigation(object):
 
         print 'Starting the Navigation'
         sleep(2)
-        self.subscriber = rospy.Subscriber('/scan', LaserScan, self.move, queue_size=1) #Call move for each laser scan
+        self.subscriber = rospy.Subscriber(self.lidarTopic, LaserScan, self.move, queue_size=1) #Call move for each laser scan
 
         rospy.spin()
+
+    def topicConfig(self):
+        if len(argv)>1:
+            self.lidarTopic = '/' + argv[3] + '/scan'
+            self.gpsTopic = '/' + argv[3] + '/odometry/filtered'
+            self.imuTopic = '/' + argv[3] + '/imu/data'
+            self.controlTopic = '/' + argv[3] + '/cmd_vel'
+            self.target_x = float(argv[1])
+            self.target_y = float(argv[2])
+
+        else:
+            self.lidarTopic ='/scan'
+            self.gpsTopic = '/navsat/enu'
+            self.imuTopic = '/imu/data'
+            self.controlTopic = '/cmd_vel'
+            self.target_x = 5 #destination coordinates
+            self.target_y = 4
+
 
     def move(self, data):
         agent_id, x, y, z, yaw, pitch, roll = self.connection.getStates(self.agent_id) #Get localization info
         #print 'x: ', x,'y: ', y,'theta: ', yaw
 
+        print yaw
         print '-----------------------------'
         global i
         global stage
@@ -88,7 +106,8 @@ class Navigation(object):
         i += 1
         if i % temp_var is 0 and i < temp_var_2:
             log[i / temp_var] = [x, y, yaw, self.path_planner.readings_polar]
-
+        print self.target_x, x
+        print self.target_y, y
         diff_x = self.target_x - x
         diff_y = self.target_y - y
         self.distance = sqrt(diff_x**2 + diff_y**2)
@@ -118,6 +137,13 @@ class Navigation(object):
 
 if __name__ == "__main__":
     try:
+        if len(argv) > 1:
+            if len(argv) != 4:
+                print "Arguments: [X-destination], [Y-destination], [Namespace] "
+            else:
+                print "Robot type: simulated"
+                print "Operating in Namespace: ", argv[3]
+                print "Destination Point X:", argv[1]," Y: ", argv[2]
         nav = Navigation()
     finally:
         if finished_logging is False:

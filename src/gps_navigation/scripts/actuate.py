@@ -24,10 +24,10 @@ class ROS2DimActuate(object):
 
     "This class controls wheels ground robots equipped with ROS."
 
-    def __init__(self):
+    def __init__(self,controlTopic):
         # setup ROS node and topics
         #rospy.init_node('two_dim_actuation_control')
-        self.pub_cmd = rospy.Publisher('/cmd_vel', Twist, queue_size=1)
+        self.pub_cmd = rospy.Publisher(controlTopic, Twist, queue_size=1)
         self.twist_msg = Twist()
 
         self.rate = rospy.Rate(40)

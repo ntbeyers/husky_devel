@@ -8,11 +8,11 @@ import tf
 from math import pi
 
 class gpsLocalization(object):
-	def __init__(self):
-		rospy.init_node('gpsLocalization') #start the control node
+	def __init__(self, namespace, odomTopic, imuTopic):
+		rospy.init_node(namespace +'gpsLocalization') #start the control node
 
-		rospy.Subscriber('/odometry/filtered', Odometry, self.updatePosition)
-		rospy.Subscriber('/imu/data', Imu, self.updateRotation)
+		rospy.Subscriber(odomTopic, Odometry, self.updatePosition)
+		rospy.Subscriber(imuTopic, Imu, self.updateRotation)
 
 		self.rate = rospy.Rate(10) #rate at 1 Hz
 
