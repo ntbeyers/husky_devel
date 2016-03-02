@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "microgrid_demo")
+set(microgrid_demo_MAINTAINER "naslab <naslab@todo.todo>")
+set(microgrid_demo_DEPRECATED "")
+set(microgrid_demo_VERSION "0.0.0")
+set(microgrid_demo_BUILD_DEPENDS "roscpp" "rospy")
+set(microgrid_demo_RUN_DEPENDS "roscpp" "rospy")
+set(microgrid_demo_BUILDTOOL_DEPENDS "catkin")

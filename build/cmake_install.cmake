@@ -121,6 +121,7 @@ IF(NOT CMAKE_INSTALL_LOCAL_ONLY)
   INCLUDE("/home/naslab/husky_devel/build/basic_sensors/cmake_install.cmake")
   INCLUDE("/home/naslab/husky_devel/build/gps_navigation/cmake_install.cmake")
   INCLUDE("/home/naslab/husky_devel/build/gps_tracker/cmake_install.cmake")
+  INCLUDE("/home/naslab/husky_devel/build/microgrid_demo/cmake_install.cmake")
 
 ENDIF(NOT CMAKE_INSTALL_LOCAL_ONLY)
 

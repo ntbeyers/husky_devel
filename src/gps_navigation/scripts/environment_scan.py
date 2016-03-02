@@ -16,9 +16,7 @@ from path_planning import GapFinder
 
 
 every_other = 3
-#increment = pi * .5 / 180
 increment = pi * .5 / 180
-#angles = arange(-3 * pi / 4, 3 * pi / 4 + increment, increment)[0::every_other] #Actual Husky
 angles = arange(-3*pi / 4, 3*pi / 4 + increment, increment)[0::every_other] #Simulated husky
 kp = .4 / 1
 kd = .3

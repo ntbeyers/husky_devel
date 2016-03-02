@@ -18,6 +18,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "gps_navigation/catkin_generated/package.cmake"
   "gps_tracker/catkin_generated/ordered_paths.cmake"
   "gps_tracker/catkin_generated/package.cmake"
+  "microgrid_demo/catkin_generated/ordered_paths.cmake"
+  "microgrid_demo/catkin_generated/package.cmake"
   "mtu01_husky/catkin_generated/package.cmake"
   "/home/naslab/husky_devel/devel/share/rospy/cmake/rospyConfig-version.cmake"
   "/home/naslab/husky_devel/devel/share/rospy/cmake/rospyConfig.cmake"
@@ -28,6 +30,8 @@ SET(CMAKE_MAKEFILE_DEPENDS
   "/home/naslab/husky_devel/src/gps_navigation/package.xml"
   "/home/naslab/husky_devel/src/gps_tracker/CMakeLists.txt"
   "/home/naslab/husky_devel/src/gps_tracker/package.xml"
+  "/home/naslab/husky_devel/src/microgrid_demo/CMakeLists.txt"
+  "/home/naslab/husky_devel/src/microgrid_demo/package.xml"
   "/home/naslab/husky_devel/src/mtu01_husky/CMakeLists.txt"
   "/home/naslab/husky_devel/src/mtu01_husky/package.xml"
   "/opt/ros/indigo/share/actionlib_msgs/cmake/actionlib_msgs-extras.cmake"
@@ -181,6 +185,7 @@ SET(CMAKE_MAKEFILE_PRODUCTS
   "basic_sensors/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gps_navigation/CMakeFiles/CMakeDirectoryInformation.cmake"
   "gps_tracker/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "microgrid_demo/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:
