@@ -29,7 +29,7 @@ class LidarLogger(object):
         self.path_planner = GapFinder(.6)
         #rospy.init_node('lidarLogger')  # start the control node
         self.logger = []
-        self.connection = gpsLocalization('husky1test','husky1/odometry/gps','husky1/imu/data')
+        self.connection = gpsLocalization('husky1test','husky1/odometry/gps','husky1/imu/data',0,0)
         self.subscriber = rospy.Subscriber('husky1/scan', LaserScan, self.readDistance)
         self.rate = rospy.Rate(10)  # set rate to 10 Hz
         # read = 0
