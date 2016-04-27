@@ -234,6 +234,8 @@ class Navigation(object):
             if self.agent_type == 'source':
                 self.stage += 1
                 self.substage = 0
+                self.subscriber.unregister()
+                print '\033[92m' + '\033[1m' + 'AND DONE' + '\033[0m'
                 return
             
             front_travel = self.path_planner.getFrontTravel(distances, angles)
@@ -262,7 +264,7 @@ class Navigation(object):
             self.subscriber.unregister()
             print '\033[92m' + '\033[1m' + 'AND DONE' + '\033[0m'
         elif self.stage > len(self.targets):  # just do nothing after that
-            print "didn't unregister"
+            print "failed to  unregister"
             sleep(100)
 
 
