@@ -88,7 +88,7 @@ class PlanarTracker(object):
 
     def faceDirection(self, theta_desired):
         theta_desired = wrapAnglePi(theta_desired)
-        print 'Facing direction.'
+        #print 'Facing direction.'
         bound = .02
         self.angular_control.setGain(self.angular_ultimate_gain / 4)
         theta_error = wrapAnglePi(theta_desired - self.locate(self.agent_id)[4])
@@ -105,7 +105,7 @@ class PlanarTracker(object):
         self.actuate(0, 0)
         agent_id, x_actual, y_actual, z, theta_actual, pitch, roll = self.locate(self.agent_id)
         theta_error = wrapAnglePi(theta_desired - theta_actual)
-        print 'Angular error:', theta_error, 'radians =', theta_error * 180 / pi, 'degrees'
+        #print 'Angular error:', theta_error, 'radians =', theta_error * 180 / pi, 'degrees'
 
     def followTrajectory(self, trajectory, x_calibrate=0, y_calibrate=0):
         print 'Following Trajectory.'

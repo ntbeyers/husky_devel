@@ -11,7 +11,7 @@
 import rospy
 from numpy import arctan2, sqrt, arange, pi, sin, cos, save
 from sys import path, argv
-path.append('/home/naslab/husky_devel/src/microgrid_demo/modules')
+path.append('/home/ntbeyers/husky_devel/src/microgrid_demo/modules')
 from gpsLocalization import gpsLocalization
 from sensor_msgs.msg import LaserScan
 from actuate import ROS2DimActuate
@@ -67,7 +67,7 @@ class Navigation(object):
         #Countdown to start
         sleep_time = 3
         while sleep_time > 0:
-            print "Mission starts in:", sleep_time
+            #print "Mission starts in:", sleep_time
             sleep_time -= 1
             sleep(1)
         self.distance = []
@@ -75,7 +75,7 @@ class Navigation(object):
         self.prev_time = time()
         self.crash_avert_velocity = 0.0
 
-        print 'Starting the Navigation'
+        print self.namespace + ': Starting navigation'
         self.subscriber = rospy.Subscriber(self.lidarTopic, LaserScan, self.move, queue_size=1) #Call move for each laser scan
 
 
@@ -85,7 +85,7 @@ class Navigation(object):
     def topicConfig(self):
         #parse and store config file
         config = ConfigParser.ConfigParser()
-        config.read('/home/naslab/husky_devel/src/microgrid_demo/scripts/'+ argv[1] + '.cfg')
+        config.read('/home/ntbeyers/husky_devel/src/microgrid_demo/scripts/'+ argv[1] + '.cfg')
 
         self.namespace = config.get('setup', 'namespace')
         self.agent_type = config.get('setup', 'agent_type')
@@ -120,7 +120,7 @@ class Navigation(object):
 
     def move(self, data):
         agent_id, x, y, z, yaw, pitch, roll = self.connection.getStates(self.agent_id)
-        print '-----------------------------'
+        #print '-----------------------------'
 
         # extract distance data and analyze them
         distances = list(data.ranges)[0::every_other]
@@ -146,7 +146,7 @@ class Navigation(object):
 
             # Find where to approach target from
             target = withDistance(self.targets[self.stage].x, self.targets[self.stage].y, self.targets[self.stage].approach_angle, self.targets[self.stage].approach_dist)
-            print target
+            #print target
             
             target_x = target[0]
             target_y = target[1]
@@ -164,7 +164,7 @@ class Navigation(object):
 
             # See if reached the destination
             if self.distance < .1:
-                print '\033[92m' + '\033[1m' + 'ARRIVED TO GATE' + '\033[0m'
+                print  self.namespace + ': Arrived at target'
 
                 self.tracker.faceDirection(self.targets[self.stage].approach_angle)
                 self.substage = 1
@@ -235,15 +235,15 @@ class Navigation(object):
                 self.stage += 1
                 self.substage = 0
                 self.subscriber.unregister()
-                print '\033[92m' + '\033[1m' + 'AND DONE' + '\033[0m'
+                print '\033[92m' + '\033[1m' + self.namespace +' DONE' + '\033[0m'
                 return
             
             front_travel = self.path_planner.getFrontTravel(distances, angles)
             front_error = front_travel - self.targets[self.stage].min_dist
-            print front_travel, front_error
+            #print front_travel, front_error
             if abs(front_error) < .03:
                 self.substage = 2
-                print 'Connection made. Reversing.'
+                print  self.namespace + ': Connection made. Reversing.'
                 sleep(5)
                 
             self.actuation.actuate(.5 * front_error, 0)
@@ -252,26 +252,26 @@ class Navigation(object):
         elif self.substage == 2:
             front_travel = self.path_planner.getFrontTravel(distances, angles)
             front_error = front_travel - self.targets[self.stage].min_dist - 1
-            print front_travel, front_error
+            #print front_travel, front_error
             if abs(front_error) < .03:
                 self.stage += 1
                 self.substage = 0
-                print 'Connection complete. Proceeding to next operation.'
+                print self.namespace + ': Connection complete. Proceeding to next operation.'
                 
             self.actuation.actuate(.5 * front_error, 0)
 
         if self.stage == len(self.targets):
             self.subscriber.unregister()
-            print '\033[92m' + '\033[1m' + 'AND DONE' + '\033[0m'
+            print '\033[92m' + '\033[1m' + self.namespace + ' DONE' + '\033[0m'
         elif self.stage > len(self.targets):  # just do nothing after that
-            print "failed to  unregister"
+            print self.namespace + ": failed to  unregister"
             sleep(100)
 
 
 if __name__ == "__main__":
     try:
-        if len(argv) != 1:
+        if len(argv) != 2:
             print "Arguments: [config file name]"
         nav = Navigation()
     finally:
-        print "Done!"
+        print "Ending process: " + nav.namespace

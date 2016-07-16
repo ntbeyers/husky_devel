@@ -1,8 +1,8 @@
-prefix=/home/naslab/husky_devel/install
+prefix=/home/ntbeyers/husky_devel/install
 
 Name: basic_sensors
 Description: Description of basic_sensors
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/naslab/husky_devel/install/lib 
+Libs: -L/home/ntbeyers/husky_devel/install/lib 
 Requires: 

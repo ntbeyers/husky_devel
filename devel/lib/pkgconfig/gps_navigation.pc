@@ -1,8 +1,8 @@
-prefix=/home/naslab/husky_devel/devel
+prefix=/home/ntbeyers/husky_devel/devel
 
 Name: gps_navigation
 Description: Description of gps_navigation
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/naslab/husky_devel/devel/lib 
+Libs: -L/home/ntbeyers/husky_devel/devel/lib 
 Requires: 

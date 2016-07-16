@@ -11,7 +11,7 @@
 import rospy
 from numpy import arctan2, sqrt, arange, pi, sin, cos, save
 from sys import path, argv
-path.append('/home/naslab/husky_devel/src/microgrid_demo/modules')
+path.append('/home/ntbeyers/husky_devel/src/microgrid_demo/modules')
 from gpsLocalization import gpsLocalization
 from sensor_msgs.msg import LaserScan
 from actuate import ROS2DimActuate
