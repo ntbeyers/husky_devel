@@ -1,7 +1,0 @@
-set(_CATKIN_CURRENT_PACKAGE "rospy")
-set(rospy_MAINTAINER "naslab <naslab@todo.todo>")
-set(rospy_DEPRECATED "")
-set(rospy_VERSION "0.0.0")
-set(rospy_BUILD_DEPENDS "roscpp")
-set(rospy_RUN_DEPENDS "roscpp")
-set(rospy_BUILDTOOL_DEPENDS "catkin")
